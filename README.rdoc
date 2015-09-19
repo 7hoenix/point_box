@@ -1,28 +1,51 @@
-== README
+#Rails Mini-Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Learning objectives:
 
-Things you may want to cover:
+*rails
+*database schema design (use the online schema designer)
+*authentication
+*authorization
+*git workflow
+*This afternoon, use these new skills to start adding the following features
+to a new Rails application. TDD is not dead.
 
-* Ruby version
+##Project Option 2: PointBox
 
-* System dependencies
+Create an app where an admin (let's say for example, Richard) can assign points
+to users and users can redeem those points for rewards.
 
-* Configuration
+###Points
 
-* Database creation
+points can be created ("assigned to a user") and destroyed only by the admin
+users can see their total number of points on their dashboard
 
-* Database initialization
+###Rewards
 
-* How to run the test suite
+rewards can be created, edited, updated, and destroyed only by the admin
+the list of possible rewards can be seen by regular users
+Redeeming Points
 
-* Services (job queues, cache servers, search engines, etc.)
+users can redeem their points for a reward
+when users redeem their points, the points are NOT destroyed; instead, they are
+marked as "redeemed"
 
-* Deployment instructions
+when a user redeems points for a reward, the user can see that reward on their
+dashboard
 
-* ...
+###Authentication and Authorization
 
+users need to log in to see their points and rewards
+users can only see their own points and rewards -- they should not be able to
+visit another user's page
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+users cannot add points to their account, nor can they create new rewards to
+add to the list
+
+a user cannot redeem another user's points
+admin can create a user
+
+###Optional Extensions
+
+Use Heroku to host your app (you'll need to use a Postgres database)
+Implement Twitter, Github, or Facebook OAuth login
