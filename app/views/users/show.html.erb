@@ -1,1 +1,16 @@
-<h1>Show me the <%= @user.username %></h1>
+<% if @user.is_admin? %>
+  Welcome admin <%= @user.username %>
+<% else %>
+  <h1>Show me the <%= @user.username %></h1>
+<% end %>
+<h3><%= @user.points %> points</h3>
+
+<% if current_user && current_user.is_admin? %>
+  <%= form_for @user, url: "/admin/add_points" do |f| %>
+    <%= f.label :points %>
+    <%= f.select :points, [10, 100, 1000] %>
+    <%= f.hidden_field :username, value: @user.username %>
+    <%= f.submit "Give #{@user.username} points" %>
+  <% end %>
+<% end %>
+
