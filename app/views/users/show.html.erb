@@ -3,10 +3,11 @@
 <% else %>
   <h1>Show me the <%= @user.username %></h1>
 <% end %>
+
 <h3><%= @user.points %> points</h3>
 
 <% if current_user && current_user.is_admin? %>
-  <%= link_to "Create new reward", new_reward_path %>
+  <%= link_to "Create new reward", new_admin_reward_path %>
   <br>
   <%= form_for @user, url: "/admin/add_points" do |f| %>
     <%= f.label :points %>

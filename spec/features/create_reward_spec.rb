@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "An admin creates a new reward" do
-  scenario "and is redirected to the listing of all rewards" do
+  scenario "and is redirected to the reward page" do
     User.create(username: "justin", password: "justin", role: 1)
 
     visit login_path
