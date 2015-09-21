@@ -1,0 +1,10 @@
+<h1>Create a new reward</h1>
+<%= form_for [:admin, @reward] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :cost %>
+  <%= f.select :cost, [10, 100, 1000] %>
+
+  <%= f.submit "Create reward" %>
+<% end %>

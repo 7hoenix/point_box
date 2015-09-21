@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     patch "add_points", to: "users#add_points"
+    resources :rewards, only: [:new, :create]
   end
+
+  resources :rewards, only: [:show]
 
   root "users#new"
 
