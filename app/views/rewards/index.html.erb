@@ -1,4 +1,6 @@
 <% @rewards.each do |reward| %>
   <%= reward.name %>: <%= reward.cost %>
-  <%= link_to "Edit #{reward.name}", edit_admin_reward_path(reward) %>
+  <% if current_user && current_user.is_admin? %>
+    <%= link_to "Edit #{reward.name}", edit_admin_reward_path(reward) %>
+  <% end %>
 <% end %>
