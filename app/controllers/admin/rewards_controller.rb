@@ -22,9 +22,18 @@ class Admin::RewardsController < AdminController
   def update
     @reward = Reward.find_by(params[:name])
 
-    @reward.update(reward_params)
+    if @reward.update(reward_params)
+      redirect_to @reward
+    else
+      render file: "/public/404" unless current_admin?
+    end
+  end
 
-    redirect_to @reward
+  def destroy
+    @reward = Reward.find(params[:id])
+    @reward.delete
+
+    redirect_to rewards_path
   end
 
 
