@@ -1,0 +1,8 @@
+<% @rewards.each do |reward| %>
+  <%= reward.name %>: <%= reward.cost %>
+  <% if current_user && current_user.is_admin? %>
+    <%= link_to "Edit #{reward.name}", edit_admin_reward_path(reward) %>
+    <%= link_to "Delete #{reward.name}", admin_reward_path(reward), method:
+      :delete %>
+  <% end %>
+<% end %>
