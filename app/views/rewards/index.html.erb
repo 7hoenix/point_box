@@ -1,0 +1,7 @@
+<h1>Rewards</h1>
+<% @rewards.each do |reward| %>
+  <%= reward.name %>: <%= reward.cost %>
+  <% if current_user %>
+    <%= link_to "Redeem points for #{reward.name}", user_redeem_path(current_user, reward) %>
+  <% end %>
+<% end %>

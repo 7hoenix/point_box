@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Reward, type: :model do
+
   it "has a name a cost" do
     reward = Reward.new(name: "brownies", cost: 10)
 

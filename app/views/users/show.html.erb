@@ -1,10 +1,14 @@
 <% if @user.is_admin? %>
   Welcome admin <%= @user.username %>
-<% else %>
+<% elsif current_user == @user %>
   <h1>Show me the <%= @user.username %></h1>
+  <br>
+  <h3><%= @user.username %>'s rewards</h3>
+  <br>
+  <% @rewards.each do |reward| %>
+    <%= reward.name %>
+  <% end %>
 <% end %>
-
-<h3><%= @user.points %> points</h3>
 
 <% if current_user && current_user.is_admin? %>
   <%= link_to "Create new reward", new_admin_reward_path %>
