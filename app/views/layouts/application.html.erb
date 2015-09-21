@@ -10,6 +10,7 @@
   <% if current_user %>
     <%= current_user.username %>
     <%= link_to "Logout", logout_path, method: :delete %>
+    <%= current_user.points %> points
   <% end %>
 <%= yield %>
 

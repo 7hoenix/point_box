@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :users, to: [:new, :create, :show]
 
+  resources :users, only: [] do
+    get "redeem", to: "rewards#redeem"
+  end
+
   namespace :admin do
     patch "add_points", to: "users#add_points"
     resources :rewards, except: [:show, :index]

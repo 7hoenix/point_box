@@ -15,8 +15,6 @@ RSpec.feature "admin can assign points" do
     visit users_path
     click_link "Stinette"
 
-    expect(page).to have_content("Show me the Stinette")
-
     select 10, from: "Points"
     click_button "Give Stinette points"
 

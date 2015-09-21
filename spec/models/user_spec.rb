@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe "#is_admin?" do
     it "returns true if the user is an admin" do
       admin = User.create(username: "justin", password: "justin", role: 1)
